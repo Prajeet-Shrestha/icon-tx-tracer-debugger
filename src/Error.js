@@ -26,13 +26,13 @@ function Error() {
           <div class='mattress'></div>
         </div>
         <div class='man'>
-          <div class='foot'></div>
-          <div class='head'>
+          {/* <div class='foot'></div> */}
+          {/* <div class='head'>
             <div class='face'></div>
             <div class='hair'></div>
-          </div>
+          </div> */}
           <div class='man-body'></div>
-          <div class='arm'></div>
+          {/* <div class='arm'></div> */}
         </div>
       </div>
       <a href='https://codepen.io/SofiaSergio/' target='_blank'>

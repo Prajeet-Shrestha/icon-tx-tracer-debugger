@@ -192,18 +192,19 @@ $color-blue: #73bcc6;
     @include left50;
     @include bg($color-skin, 1);
     border-radius: 50%;
-    box-shadow: -30px -70px 0 -71px $color-skin;
     height: 150px;
     overflow: hidden;
+    background-image: url('./iconex.png');
+    background-size: cover;
     width: 150px;
-    &:after {
-      @include top50;
-      @include bg($color-blue, 1);
-      content: '';
-      height: 100%;
-      left: calc(50% - 20px);
-      width: 100px;
-    }
+    // &:after {
+    //   @include top50;
+    //   @include bg($color-blue, 1);
+    //   content: '';
+    //   height: 100%;
+    //   left: calc(50% - 20px);
+    //   width: 100px;
+    // }
   }
   .head {
     @include position;
