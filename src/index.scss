@@ -1,0 +1,111 @@
+body {
+  margin: 0;
+
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
+    'Droid Sans', 'Helvetica Neue', sans-serif;
+  font-family: monospace;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* apply a natural box layout model to all elements, but allowing components to change */
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+body {
+  color: #b6b6b6;
+  font-size: 16px;
+  // background: radial-gradient(at 60% 10%, #22242f 0, #161721 100%);
+  background: #161721;
+}
+
+.App {
+  padding: 20px 30px;
+}
+
+.server-input {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.input-btn {
+  display: flex;
+  align-items: center;
+  button {
+    padding: 5px 15px;
+    margin-left: 15px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 14px;
+    box-shadow: none;
+    background-color: rgb(62, 187, 62);
+    outline: none;
+    border-radius: 10px;
+  }
+}
+.form {
+  width: 200px;
+  position: relative;
+  height: 50px;
+  overflow: hidden;
+}
+
+.form input {
+  width: 100%;
+  height: 100%;
+  color: #d6d6d6;
+  background-color: transparent;
+  padding-top: 20px;
+  border: none;
+  outline: none;
+  font-size: 18px;
+}
+
+.form label {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  border-bottom: 1px solid white;
+}
+
+.form label::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  height: 100%;
+  width: 100%;
+  border-bottom: 3px solid #5fa8d3;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+}
+
+.content-name {
+  position: absolute;
+  bottom: 5px;
+  left: 0;
+  transition: all 0.3s ease;
+}
+
+.form input:focus + .label-name .content-name,
+.form input:valid + .label-name .content-name {
+  transform: translateY(-150%);
+  font-size: 14px;
+  color: #5fa8d3;
+}
+
+.form input:focus .label-name::after,
+.form input:valid + .label-name:after {
+  transform: translateX(0%);
+}

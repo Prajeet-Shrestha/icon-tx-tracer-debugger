@@ -1,0 +1,38 @@
+$w: 100px;
+$pad: 2px;
+$thumb: ($w/2)- ($pad * 2);
+
+$off: hsl(0, 100%, 50%);
+$on: hsl(120, 100%, 50%);
+
+input[type='checkbox'] {
+  visibility: hidden;
+  height: 0;
+  width: 0;
+}
+
+label {
+  display: block;
+  position: relative;
+  width: $w;
+  height: $w/2;
+  border-radius: $w/4;
+  box-shadow: 1px 1px 1px 0 #888 inset, 1px 1px 1px 1px #fff;
+  cursor: pointer;
+  &:after {
+    content: '';
+    position: absolute;
+    height: ($w/2) - 4;
+    width: ($w/2) - 4;
+
+    border-radius: 50%;
+    top: $pad;
+    left: $pad;
+    box-shadow: 1px 1px 1px 0 #888, 0 0 1px 0 #999;
+    transition: all 0.15s linear;
+  }
+}
+
+input:checked + label:after {
+  left: 52px;
+}

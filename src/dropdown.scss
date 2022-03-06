@@ -1,0 +1,95 @@
+$color-bg-primary: white;
+$color-bg-primary-hovered: transparent;
+$color-text-primary: white;
+$color-border: #eee;
+
+i {
+  font-family: 'Material Icons Round';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px; /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+}
+
+.btn {
+  position: relative;
+  padding: 0.5rem;
+  background: transparent;
+  border: 1px solid rgb(181, 181, 181);
+  border-radius: 10px;
+  font: inherit;
+  cursor: pointer;
+  color: wheat;
+}
+
+.dropdown {
+  &-menu {
+    position: absolute;
+    display: none;
+    border: 1px solid rgb(181, 181, 181);
+    min-width: 6rem;
+    max-width: 80vw;
+    padding: 0.5rem;
+    background: transparent;
+    border-radius: 10px;
+    margin-top: 20px;
+    box-shadow: 0 0.15rem 0.5rem rgba(33, 33, 33, 0.2);
+    &__item {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      padding: 0.5rem 2rem 0.5rem 0.5rem;
+      background: none;
+      border: none;
+      border-radius: 8px;
+      text-align: left;
+      text-decoration: none;
+      font: inherit;
+      color: $color-text-primary;
+      cursor: pointer;
+      overflow: hidden;
+      &:hover {
+        background: $color-bg-primary-hovered;
+      }
+      &--divider {
+        width: 100%;
+        margin: 0.5rem 0;
+        border-bottom: 2px solid $color-border;
+      }
+      & i {
+        margin-right: 0.5rem;
+        line-height: 1;
+        font-size: 20px;
+      }
+      &:hover i {
+        color: $color-text-primary;
+      }
+    }
+    & .dropdown > &__item {
+      &::after {
+        @extend i;
+        content: 'arrow_right';
+        position: absolute;
+        right: 0.5rem;
+        margin-left: auto;
+      }
+    }
+  }
+  &.active > &-menu {
+    display: block;
+  }
+}
