@@ -1,4 +1,4 @@
-import { createPopper } from 'https://cdn.skypack.dev/@popperjs/core';
+import { createPopper } from '@popperjs/core/lib/createPopper';
 import React from 'react';
 
 class Dropdown extends React.Component {
