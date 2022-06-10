@@ -1,17 +1,14 @@
-import "./logs.scss";
-import "./dropdown.scss";
-
 import { useEffect, useState } from "react";
-import { getTx } from "./icon";
-import Logs from "./Logs";
-import Error from "./Error";
+import { getTx } from "./services/icon";
+import Logs from "./components/logs/Logs";
+import Error from "./components/error/Error";
 import { useLocation } from "react-router-dom";
 import {
   Dropdown,
   DropdownMenu,
   DropdownItem,
   DropdownDivider,
-} from "./Dropdown";
+} from "./components/dropdown/Dropdown";
 
 function App() {
   const [logs, setLog] = useState(null);

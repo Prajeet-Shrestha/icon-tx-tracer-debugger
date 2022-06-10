@@ -1,6 +1,6 @@
-import { createPopper } from '@popperjs/core/lib/createPopper';
-import React from 'react';
-
+import { createPopper } from "@popperjs/core/lib/createPopper";
+import React from "react";
+import "./dropdown.scss";
 class Dropdown extends React.Component {
   constructor(props) {
     super(props);
@@ -18,17 +18,20 @@ class Dropdown extends React.Component {
   }
 
   componentDidMount() {
-    document.addEventListener('click', this.handleOutsideClick);
+    document.addEventListener("click", this.handleOutsideClick);
   }
 
   handleOutsideClick(e) {
-    if (this.box && !(this.box?.current?.contains(e.target) || this.box.current == e.target)) {
+    if (
+      this.box &&
+      !(this.box?.current?.contains(e.target) || this.box.current == e.target)
+    ) {
       this.close();
     } else if (this.state.toggle) {
       this.setState((res) => {
         return {
           ...res,
-          toggle: <button className='btn'>{e.target.innerText}</button>,
+          toggle: <button className="btn">{e.target.innerText}</button>,
         };
       });
     }
@@ -45,9 +48,17 @@ class Dropdown extends React.Component {
 
   render() {
     return (
-      <div className={'dropdown' + (this.state.show_menu ? ' active' : '')} ref={this.box}>
-        {React.cloneElement(this.state.toggle, { onClick: (e) => this.toggle(e), ref: this.triggerRef })}
-        {React.cloneElement(this.props.children, { triggerRef: this.triggerRef })}
+      <div
+        className={"dropdown" + (this.state.show_menu ? " active" : "")}
+        ref={this.box}
+      >
+        {React.cloneElement(this.state.toggle, {
+          onClick: (e) => this.toggle(e),
+          ref: this.triggerRef,
+        })}
+        {React.cloneElement(this.props.children, {
+          triggerRef: this.triggerRef,
+        })}
       </div>
     );
   }
@@ -60,7 +71,7 @@ class DropdownMenu extends React.Component {
     this.popupRef = React.createRef();
 
     this.state = {
-      placement: this.props.placement || 'bottom-start',
+      placement: this.props.placement || "bottom-start",
     };
   }
 
@@ -80,7 +91,7 @@ class DropdownMenu extends React.Component {
 
   render() {
     return (
-      <div className='dropdown-menu' ref={this.popupRef}>
+      <div className="dropdown-menu" ref={this.popupRef}>
         {this.props.children}
       </div>
     );
@@ -90,7 +101,7 @@ class DropdownMenu extends React.Component {
 class DropdownItem extends React.Component {
   render() {
     return (
-      <button className='dropdown-menu__item' onClick={this.props.onClick}>
+      <button className="dropdown-menu__item" onClick={this.props.onClick}>
         {this.props.children}
       </button>
     );
@@ -99,7 +110,7 @@ class DropdownItem extends React.Component {
 
 class DropdownDivider extends React.Component {
   render() {
-    return <div className='dropdown-menu__item--divider'></div>;
+    return <div className="dropdown-menu__item--divider"></div>;
   }
 }
 

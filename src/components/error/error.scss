@@ -1,6 +1,3 @@
-// body { background-color: #021A4B; font-family: 'Concert One', cursive; margin: 0; overflow: hidden; padding: 0; }
-
-/*/////////////////// rules */
 $color-black: #13242c;
 $color-dark: #283b49;
 $color-yellow: #eba849;
@@ -8,7 +5,6 @@ $color-white: #dbdbdb;
 $color-green: #41a88b;
 $color-light: #7987ab;
 $color-skin: #ca906f;
-// $color-red:       #A00A11;
 $color-blue: #73bcc6;
 
 @mixin bg($color, $opacity) {
@@ -33,8 +29,7 @@ $color-blue: #73bcc6;
   top: 50%;
   transform: translate(-50%, -50%);
 }
-/*___________________________________________________*/
-/*//////////////////////////////////////////// scene */
+
 .text {
   margin: 0;
   top: 50px;
@@ -42,7 +37,6 @@ $color-blue: #73bcc6;
 }
 .container {
   @include centered;
-  // @include bg($color-white, 0.3);
   height: 350px;
   width: 400px;
   .bg {
@@ -66,7 +60,6 @@ $color-blue: #73bcc6;
 }
 .ufo {
   @include position;
-  // @include bg($color-white, 0.3);
   height: 100px;
   left: calc(50% - 50px);
   top: 0;
@@ -83,7 +76,7 @@ $color-blue: #73bcc6;
       @include position;
       @include bg($color-yellow, 1);
       border-radius: 50%;
-      content: '';
+      content: "";
       height: 20px;
       top: -6px;
       width: 20px;
@@ -105,7 +98,7 @@ $color-blue: #73bcc6;
       @include left50;
       @include bg($color-dark, 1);
       border-radius: 50%;
-      content: '';
+      content: "";
       height: 70px;
       top: -10px;
       width: 100px;
@@ -138,7 +131,7 @@ $color-blue: #73bcc6;
           @include left50;
           @include bg($color-green, 1);
           border-radius: 50%;
-          content: '';
+          content: "";
           height: 40px;
           bottom: 30px;
           width: 40px;
@@ -147,7 +140,7 @@ $color-blue: #73bcc6;
           @include left50;
           @include bg($color-black, 1);
           border-radius: 50%;
-          content: '';
+          content: "";
           height: 10px;
           bottom: 5px;
           width: 10px;
@@ -194,17 +187,9 @@ $color-blue: #73bcc6;
     border-radius: 50%;
     height: 150px;
     overflow: hidden;
-    background-image: url('./iconex.png');
+    background-image: url("../../assets/iconex.png");
     background-size: cover;
     width: 150px;
-    // &:after {
-    //   @include top50;
-    //   @include bg($color-blue, 1);
-    //   content: '';
-    //   height: 100%;
-    //   left: calc(50% - 20px);
-    //   width: 100px;
-    // }
   }
   .head {
     @include position;
@@ -224,7 +209,7 @@ $color-blue: #73bcc6;
         @include position;
         @include bg($color-black, 1);
         border-radius: 50%;
-        content: '';
+        content: "";
         height: 70px;
         left: 0;
         top: 50px;
@@ -251,8 +236,7 @@ $color-blue: #73bcc6;
     width: 60px;
   }
 }
-/*___________________________________________________*/
-/*//////////////////////////////////////// animation */
+
 .ufo {
   animation: top-anima 1.5s infinite linear;
   @keyframes top-anima {
@@ -405,22 +389,4 @@ $color-blue: #73bcc6;
       }
     }
   }
-}
-/*/////////////////////// credit ////*/
-#link {
-  bottom: 20px;
-  color: #fff;
-  opacity: 0.5;
-  display: flex;
-  align-items: center;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-}
-#link p {
-  margin: 0;
-  margin-left: 5px;
-}
-#link:hover {
-  opacity: 1;
 }

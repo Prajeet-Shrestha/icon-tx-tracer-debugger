@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 // import './toggle.scss';
+import "./logs.scss";
+
 function Logs({ logs, logs_error, checkError }) {
   const [viewLog, setViewLog] = useState(logs);
 
